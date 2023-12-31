@@ -9,6 +9,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Define package names
 packages=(
+  stow
   lazygit
   wezterm
   fzf
