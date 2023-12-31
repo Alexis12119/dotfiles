@@ -51,3 +51,8 @@ done
 # Install bob for neovim-nightly
 sudo pacman -Sy bob
 bob use nightly
+
+git clone https://github.com/Alexis12119/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+
+stow */
