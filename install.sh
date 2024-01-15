@@ -28,7 +28,6 @@ packages=(
   zoom
   gparted
   xfce4-screenshooter
-  peazip
   pipewire
   pipewire-alsa
   pipewire-jack
