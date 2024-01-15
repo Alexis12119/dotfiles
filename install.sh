@@ -28,16 +28,25 @@ packages=(
   zoom
   gparted
   xfce4-screenshooter
+  peazip
   pipewire
   pipewire-alsa
   pipewire-jack
   pipewire-pulse
+  pavucontrol
   wireplumber
   pipewire-zeroconf
+  filelight
+  xclip
+  unzip
   rofi
   tmux
   brightnessctl
   clang
+  obs-studio
+  sof-firmware
+  bat
+  alsa-ucm-conf
 )
 
 # Install necessary packages
