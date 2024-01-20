@@ -46,6 +46,9 @@ packages=(
   sof-firmware
   bat
   alsa-ucm-conf
+  bluez
+  bluez-utils
+  blueman
 )
 
 # Install necessary packages
@@ -63,5 +66,7 @@ bob use nightly
 
 git clone https://github.com/Alexis12119/dotfiles.git ~/dotfiles
 cd ~/dotfiles
+
+sudo systemctl enable bluetooth.service
 
 stow */
