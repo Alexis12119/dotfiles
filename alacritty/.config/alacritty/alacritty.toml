@@ -1,0 +1,64 @@
+live_config_reload = true
+
+import = [
+    "~/.config/alacritty/themes/themes/{github_dark_tritanopia}.toml"
+]
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 10.0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "Return"
+mods = "Alt"
+
+[scrolling]
+history = 5000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+program = "zsh"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+dynamic_title = false
+opacity = 0.9
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 105
+lines = 31
+
+[window.padding]
+x = 5
+y = 5
+
+[window.position]
+x = 408
+y = 1
