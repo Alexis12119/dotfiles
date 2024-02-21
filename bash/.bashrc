@@ -1,6 +1,8 @@
 # Enable vim mode
 set -o vi
 
+# enabled scroll lock
+xmodmap -e "add mod3 = Scroll_Lock"
 
 # ~/.bashrc
 #
