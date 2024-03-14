@@ -28,6 +28,7 @@ packages=(
   zoom
   gparted
   xfce4-screenshooter
+  spectacle
   pipewire
   pipewire-alsa
   pipewire-jack
