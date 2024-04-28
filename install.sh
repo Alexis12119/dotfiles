@@ -50,6 +50,7 @@ packages=(
   bluez
   bluez-utils
   blueman
+  hyprland
 )
 
 # Install necessary packages

@@ -29,10 +29,10 @@ git clone https://github.com/CristianDragos/FirefoxThemes.git
 mv -f ~/FirefoxThemes/SimplyDark/* ~/.mozilla/firefox/*.default-release/chrome
 ```
 
-## Global Theme
+Install [HyprDots](https://github.com/prasanthrangan/hyprdots)
 
-- Go to `System Settings > Appearance > Global Theme`.
-- Press `Get New Global Themes` and search for `monochrome` and install it.
-- Go to `Cursors` section and press `Get New Cursors` and search for `Dracula cursors` and install then use it.
-- Go to `Icons` section and press `Get New Icons` and search for `Win 11 icon theme` and install then use it.
-- Lastly, Go to `System Settings > Startup and Shutdown > Login Screen(SDDM)` and press `Get New SDDM Themes` then choose `Ant-Dracula sddm` and use it.
+```
+git clone --depth 1 https://github.com/prasanthrangan/hyprdots ~/HyDE
+cd ~/HyDE/Scripts
+./install.sh
+```
