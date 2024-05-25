@@ -40,7 +40,7 @@ return {
 		"Liga SFMono Nerd Font",
 		"Apple Color Emoji",
 	}),
-	font_size = 11,
+	font_size = 10,
 	max_fps = 120,
 	enable_wayland = false,
 	pane_focus_follows_mouse = true,
