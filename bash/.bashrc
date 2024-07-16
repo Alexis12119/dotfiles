@@ -83,6 +83,85 @@ _open_files_for_editing() {
     echo "$FUNCNAME: package 'xdg-utils' or 'exo' is required." >&2
 }
 
+export PATH=/opt/flutter/bin:$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:$HOME/bin:/usr/local/bin:$PATH
+export CPLUS_INCLUDE_PATH=/usr/include/c++
+export C_INCLUDE_PATH=/usr/include/c++
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+export PATH=$HOME/.config/rofi/scripts:$HOME/.local/share/nvim/mason/bin:$PATH
+
+export GPG_TTY=$(tty)
+alias apps="echo && pacman -Slq | fzf --multi  --preview-window=right,60%  --preview 'pacman -Si {1}' | xargs -ro doas pacman -S"
+alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-kick="NVIM_APPNAME=kickstart nvim"
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+alias nvim-test="NVIM_APPNAME=test nvim"
+alias nvim-launch="NVIM_APPNAME=Launch nvim"
+
+nvims() {
+  items=("kickstart" "LazyVim" "AstroNvim" "test" "Launch")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim "$@"
+}
+
+alias cdr='change-directory'
+
+change-directory() {
+  # Check if a specific starting directory is provided as an argument
+  if [ -n "$1" ]; then
+    start_directory="$1"
+  else
+    start_directory="$HOME"  # Default to your home directory
+  fi
+
+  # Define the command to invoke fzf and select a directory
+  selectedDirectory=$(fd --type d . --hidden --exclude .git --exclude .vscode --exclude node_modules "$start_directory" | fzf --prompt='󰈚 Choose Dir: ' --layout=reverse --border=sharp --ansi --exit-0)
+
+  # Check if a directory was selected
+  if [ -n "$selectedDirectory" ]; then
+    # Change the current directory to the selected directory
+    cd "$selectedDirectory" || return
+  fi
+}
+
+alias ff='fzf-files'
+
+fzf-files() {
+  # Define the command to invoke fzf and select a file
+  selectedFile=$(fzf --prompt='󰈚 Choose File: ' --layout=reverse --border --preview 'bat --color=always {}' --ansi --exit-0)
+
+  # Check if a file was selected
+  if [ -n "$selectedFile" ]; then
+    # Open the selected file in your preferred text editor (e.g., Vim or Neovim)
+    nvim "$selectedFile"  # Change this line according to your preferred text editor
+  fi
+}
+
+alias tss='tmux-session-switch'
+
+tmux-session-switch() {
+    local sessions
+    sessions=$(tmux list-sessions -F "#S")
+    local selected_session
+    selected_session=$(echo "$sessions" | fzf --prompt "Switch to session: " --ansi)
+    if [ -n "$selected_session" ]; then
+        tmux switch-client -t "$selected_session"
+    fi
+}
+
+alias qc='quick-cmd'
+
+quick-cmd() {
+    local cmd
+    cmd=$(history | awk '{$1="";print $0}' | fzf --prompt "Run command: " --ansi)
+    [ -z "$cmd" ] && return
+    eval "$cmd"
+}
 #------------------------------------------------------------
 
 ## Aliases for the functions above.
