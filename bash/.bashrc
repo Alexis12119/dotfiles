@@ -88,9 +88,9 @@ export CPLUS_INCLUDE_PATH=/usr/include/c++
 export C_INCLUDE_PATH=/usr/include/c++
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 export PATH=$HOME/.config/rofi/scripts:$HOME/.local/share/nvim/mason/bin:$PATH
-
 export GPG_TTY=$(tty)
-alias apps="echo && pacman -Slq | fzf --multi  --preview-window=right,60%  --preview 'pacman -Si {1}' | xargs -ro doas pacman -S"
+
+alias apps="echo && pacman -Slq | fzf --multi --preview-window=right,60% --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
