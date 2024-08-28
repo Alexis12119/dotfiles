@@ -132,10 +132,10 @@ return {
 		{ key = "k", mods = "ALT|SHIFT", action = wezterm.action.AdjustPaneSize({ "Up", 1 }) },
 		{ key = "l", mods = "ALT|SHIFT", action = wezterm.action.AdjustPaneSize({ "Right", 1 }) },
 
-		{ key = "h", mods = "ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-left") },
-		{ key = "j", mods = "ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-down") },
-		{ key = "k", mods = "ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-up") },
-		{ key = "l", mods = "ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-right") },
+		{ key = "h", mods = "CTRL|ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-left") },
+		{ key = "j", mods = "CTRL|ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-down") },
+		{ key = "k", mods = "CTRL|ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-up") },
+		{ key = "l", mods = "CTRL|ALT", action = wezterm.action.EmitEvent("ActivatePaneDirection-right") },
 
 		{ key = "[", mods = "ALT", action = wezterm.action({ ActivateTabRelative = -1 }) },
 		{ key = "]", mods = "ALT", action = wezterm.action({ ActivateTabRelative = 1 }) },
