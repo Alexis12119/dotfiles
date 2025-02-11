@@ -34,7 +34,7 @@ end)
 
 return {
 	-- color_scheme = "Mountain",
-	color_scheme = "Rxyhn",
+	color_scheme = "Material-Deep-Ocean",
 	automatically_reload_config = true,
 	font = wezterm.font_with_fallback({
 		"JetBrainsMono NF",
