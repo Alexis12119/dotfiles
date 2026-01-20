@@ -42,7 +42,7 @@ return {
 		"Apple Color Emoji",
 	}),
 	font_size = 10,
-	max_fps = 120,
+	max_fps = 240,
 	enable_wayland = false,
 	pane_focus_follows_mouse = true,
 	warn_about_missing_glyphs = false,
